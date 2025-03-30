@@ -62,7 +62,7 @@ def get_openai_response(question, file_name=None, file_content=None):
     except Exception as e:
         return f"Error querying OpenAI API: {str(e)}"
 
-@app.post("/api/")
+@app.post("/api")
 async def process_request(
     question: str = Form(...), 
     file: UploadFile = File(None)
