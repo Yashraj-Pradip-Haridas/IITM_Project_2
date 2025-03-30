@@ -5,7 +5,11 @@ from fastapi import FastAPI, File, Form, UploadFile
 import os
 load_dotenv()
 # Initialize FastAPI app
-app = FastAPI()
+app = FastAPI(
+    root_path="/",  # Ensure correct root path
+    servers=[{"url": "https://iitm-project-2.onrender.com", "description": "Render Server"}]
+)
+
 
 # OpenAI Proxy API details
 OPENAI_PROXY_TOKEN =os.getenv("OPENAI_PROXY_TOKEN")
